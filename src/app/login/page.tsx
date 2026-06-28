@@ -29,22 +29,17 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const result = await signIn("credentials", {
+      await signIn("credentials", {
         email,
         password,
         redirect: false, // prevents auto redirect, lets you handle manually
       });
 
-      if (result?.error) {
-        console.error("Login failed:", result.error);
-        alert(result.error);
-      } else {
-        console.log("Login success:", result);
         router.push("/"); // redirect to homepage or dashboard
+        setLoading(false);
       }
-    } catch (error) {
-      console.error("Error logging in:", error);
-    } finally {
+    catch (error) {
+      console.error(error);
       setLoading(false);
     }
   };
@@ -139,7 +134,7 @@ const Login = () => {
         <button
           type="button"
           className="w-full flex items-center justify-center gap-3 border border-gray-300 hover:bg-gray-50 py-3 rounded-md text-gray-700 font-medium transition-all duration-200"
-          onClick={() => signIn("google")}
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <Image src={googleImage} width={20} height={20} alt="google" />
           Continue with Google

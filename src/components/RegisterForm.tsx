@@ -41,19 +41,10 @@ const RegisterForm = ({ previousStep }: propType) => {
         email,
         password,
       });
-
-      console.log("User registered:", result.data);
-      alert("Account created successfully!");
       router.push("/login"); // redirect after success
-    } catch (error: any) {
-      if (error.response) {
-        console.error("Registration failed:", error.response.data.message);
-        alert(error.response.data.message);
-      } else {
-        console.error("Error registering user:", error);
-        alert("Something went wrong. Please try again.");
-      }
-    } finally {
+      setLoading(false);
+    } catch (error) {
+        console.error(error);
       setLoading(false);
     }
   };
@@ -170,7 +161,7 @@ const RegisterForm = ({ previousStep }: propType) => {
         <button
           type="button"
           className="w-full flex items-center justify-center gap-3 border border-gray-300 hover:bg-gray-50 py-3 rounded-md text-gray-700 font-medium transition-all duration-200"
-          onClick={() => signIn("google")}
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <Image src={googleImage} width={20} height={20} alt="google" />
           Continue with Google
