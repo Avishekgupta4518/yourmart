@@ -7,6 +7,7 @@ if (!mongodburi) {
 }
 
 let cache = global.mongoose;
+
 if (!cache) {
   cache = global.mongoose = { conn: null, promise: null };
 }
@@ -21,6 +22,7 @@ const connectDB = async () => {
       .connect(mongodburi)
       .then((conn) => conn.connection);
   }
+
   try {
     const conn = await cache.promise;
     return conn;
@@ -28,3 +30,5 @@ const connectDB = async () => {
     console.log(error);
   }
 };
+
+export default connectDB;
