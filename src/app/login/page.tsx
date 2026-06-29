@@ -56,7 +56,7 @@ const Login = () => {
         Welcome back
       </motion.h1>
       <p className="text-gray-600 mb-6 flex items-center gap-1">
-        Login to Snapcart <Leaf className="w-5 h-5 text-green-600" />
+        Login to YourMart <Leaf className="w-5 h-5 text-green-600" />
       </p>
 
       {/* Form */}

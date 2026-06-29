@@ -20,7 +20,7 @@ const Welcome = ({nextStep}:propType
       >
         <ShoppingBasket className="w-10 h-10 text-green-600" />
         <h1 className="text-4xl md:text-5xl font-extrabold text-green-700">
-          SnapCart
+          YourMart
         </h1>
       </motion.div>
 

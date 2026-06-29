@@ -70,7 +70,7 @@ const RegisterForm = ({ previousStep }: propType) => {
         Create Account
       </motion.h1>
       <p className="text-gray-600 mb-6 flex items-center gap-1">
-        Join Snapcart today <Leaf className="w-5 h-5 text-green-600" />
+        Join YourMart today <Leaf className="w-5 h-5 text-green-600" />
       </p>
 
       {/* Form */}
