@@ -189,7 +189,7 @@ const CategorySlider = () => {
 
       {/* Left Button */}
       {canScrollLeft && (
-        <button
+        <button 
           onClick={scrollLeft}
           className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full shadow-lg w-10 h-10 flex items-center justify-center hover:bg-green-100 transition"
         >
