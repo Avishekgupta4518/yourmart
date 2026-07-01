@@ -11,7 +11,7 @@ interface IOrder {
     image: string;
     quantity: number;
   }[];
-  totalAmount: string;
+  totalAmount: number;
   paymentMethod: "cod" | "online";
   address: {
     fullName: string;
