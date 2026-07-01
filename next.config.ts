@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: "C:/Users/Fix/Desktop/yourmart",
   },
+  allowedDevOrigins: ['192.168.10.68'],
   images:{
     remotePatterns:[
       {hostname:"lh3.googleusercontent.com"},
