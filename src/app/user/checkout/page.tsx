@@ -35,6 +35,7 @@ const markerIcon = new L.Icon({
 });
 
 function Checkout() {
+  const router = useRouter();
   const { userData } = useSelector((state: RootState) => state.user);
   const { subTotal, deliveryFee, finalTotal , cartData } = useSelector(
     (state: RootState) => state.cart,
@@ -184,8 +185,8 @@ function Checkout() {
       },
     });
 
-    console.log(result.data);
-  } catch (error: any) {
+    router.push("/user/order-success");
+  } catch (error) {
     console.error("Error creating COD order:", error);
   }
 };
